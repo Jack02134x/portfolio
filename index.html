@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Verma | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javas.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">AV</span>
+                <span class="logo-bracket">}</span>
+                <span class="logo-blink">_</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#stack" class="nav-link">Stack</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#opensource" class="nav-link">Open Source</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                    <span class="terminal-title">aditya@arch:~ — fish — 120x36</span>
+                    <span class="terminal-badge">●  LIVE</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-line">
+                        <span class="terminal-prompt">❯</span>
+                        <span class="terminal-command">whoami</span>
+                    </p>
+                    <p class="terminal-output hero-glow" id="typewriter-name"></p>
+                    <p class="terminal-line">
+                        <span class="terminal-prompt">❯</span>
+                        <span class="terminal-command">cat /etc/motd</span>
+                    </p>
+                    <p class="terminal-output" id="typewriter-tagline"></p>
+
+                    <div class="terminal-divider"></div>
+
+                    <div class="neofetch">
+                        <img src="jack.png" alt="jack avatar" class="neofetch-avatar" />
+                        <div class="neofetch-info">
+                            <p><span class="nf-key">OS</span>      <span class="nf-val">Arch Linux x86_64</span></p>
+                            <p><span class="nf-key">WM</span>      <span class="nf-val">Hyprland (Wayland)</span></p>
+                            <p><span class="nf-key">Shell</span>   <span class="nf-val">fish 3.7</span></p>
+                            <p><span class="nf-key">Editor</span>  <span class="nf-val">nvim</span></p>
+                            <p><span class="nf-key">Uptime</span>  <span class="nf-val">∞ since curiosity began</span></p>
+                        </div>
+                    </div>
+
+                    <div class="terminal-divider"></div>
+
+                    <p class="terminal-line">
+                        <span class="terminal-prompt">❯</span>
+                        <span class="terminal-command">ls ~/focus</span>
+                    </p>
+                    <p class="terminal-output terminal-files">
+                        <span class="file-dir">linux/</span>
+                        <span class="file-dir">systems/</span>
+                        <span class="file-dir">gamedev/</span>
+                        <span class="file-exec">ai.learning</span>
+                        <span class="file-cfg">dotfiles.git</span>
+                    </p>
+
+                    <p class="terminal-line">
+                        <span class="terminal-prompt">❯</span>
+                        <span class="terminal-command">scroll --explore</span>
+                        <span class="terminal-cursor">▊</span>
+                    </p>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#about" class="btn btn-primary">
+                    <span class="btn-icon">↓</span> Dive In
+                </a>
+                <a href="mailto:brooooooo0707@gmail.com" class="btn btn-secondary">
+                    <span class="btn-icon">✉</span> Get In Touch
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> Who Am I?
+            </h2>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="card-icon">🐧</div>
+                    <h3>Linux-First</h3>
+                    <p>A computer science student who prefers terminals over GUIs. I learn by <strong>building, breaking, and fixing</strong>—close to the system layer with scripting, automation, and tooling.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Builder Mindset</h3>
+                    <p>I explore game engines for fun, AI out of curiosity, and software engineering because <strong>systems should not fall apart</strong> when you touch them.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">📐</div>
+                    <h3>Strong Fundamentals</h3>
+                    <p>Focused on <strong>clean code</strong>, data structures, algorithms, and projects that actually <strong>do something</strong> meaningful.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">🔌</div>
+                    <h3>Electronics Explorer</h3>
+                    <p>I mess around with <strong>Arduino, ESP boards, and circuits</strong>—building small projects to see how things actually work beyond the screen.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">🎮</div>
+                    <h3>Indie Game Dev</h3>
+                    <p>I build <strong>story-driven indie games</strong> using Godot, creating my own assets in Aseprite and GIMP—focused on gameplay that feels intentional rather than forgiving.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Automation & Scripting</h3>
+                    <p>I don’t like doing the same thing twice, so I automate it—using <strong>scripts and tooling</strong> to make systems faster, cleaner, and less annoying.</p>
+                </div>
+                
+            </div>
+            <div class="philosophy-block glass-card">
+                <div class="philosophy-icon">🧩</div>
+                <blockquote>
+                    "Learn deeply. Build honestly.<br>Tools change. Fundamentals don't."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> Education
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2025 — 2029</span>
+                        <h3>B.Tech in Computer Science & Engineering</h3>
+                        <p class="timeline-school">Indore Institute of Science and Technology</p>
+                        <p>Focused on systems programming, networking, and AI fundamentals. Active participant in university Linux user group and hackathons.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2023 — 2025</span>
+                        <h3>Senior Secondary (Class XII)</h3>
+                        <p class="timeline-school">Pravati Vidya Peeth Gwalior (M.P)</p>
+                        <p>Science stream with Computer Science. Developed first CLI tools and fell in love with open source.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="stack" class="stack">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> Tech Stack
+            </h2>
+            <div class="stack-grid">
+                <!-- Programming -->
+                <div class="stack-category glass-card">
+                    <h3 class="stack-heading">
+                        <span class="stack-icon">💻</span> Programming
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">🐍 Python</span>
+                        <span class="skill-tag">🔧 C / C++</span>
+                        <span class="skill-tag">☕ Java</span>
+                        <span class="skill-tag">🖥 Bash</span>
+                    </div>
+                </div>
+                <!-- Linux & Systems -->
+                <div class="stack-category glass-card">
+                    <h3 class="stack-heading">
+                        <span class="stack-icon">🐧</span> Linux & Systems
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Arch Linux</span>
+                        <span class="skill-tag">System Config</span>
+                        <span class="skill-tag">Process Mgmt</span>
+                        <span class="skill-tag">Package Mgmt</span>
+                        <span class="skill-tag">Shell Automation</span>
+                    </div>
+                </div>
+                <!-- Networking -->
+                <div class="stack-category glass-card">
+                    <h3 class="stack-heading">
+                        <span class="stack-icon">🌐</span> Networking & Security
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OpenVPN</span>
+                        <span class="skill-tag">VPN Automation</span>
+                        <span class="skill-tag">Auth Handling</span>
+                        <span class="skill-tag">Privacy Tools</span>
+                    </div>
+                </div>
+                <!-- Dev Tools -->
+                <div class="stack-category glass-card">
+                    <h3 class="stack-heading">
+                        <span class="stack-icon">🔧</span> Dev Tools
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git (rebase)</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Git LFS</span>
+                        <span class="skill-tag">SSH Auth</span>
+                    </div>
+                </div>
+                <!-- Game Dev -->
+                <div class="stack-category glass-card">
+                    <h3 class="stack-heading">
+                        <span class="stack-icon">🎮</span> Game Development
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Godot Engine</span>
+                        <span class="skill-tag">Unity Basics</span>
+                        <span class="skill-tag">Unreal Engine</span>
+                        <span class="skill-tag">Game Logic</span>
+                    </div>
+                </div>
+                <!-- Desktop -->
+                <div class="stack-category glass-card">
+                    <h3 class="stack-heading">
+                        <span class="stack-icon">🖼</span> Desktop & Customization
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Hyprland</span>
+                        <span class="skill-tag">Hyprlock</span>
+                        <span class="skill-tag">GRUB Themes</span>
+                        <span class="skill-tag">Linux Ricing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Work Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> What I've Built
+            </h2>
+            <p class="projects-subtitle">Live from <a href="https://github.com/jack02134x" target="_blank" rel="noopener noreferrer">github.com/jack02134x</a> — auto-synced.</p>
+            <div class="projects-grid" id="projects-grid">
+                <div class="projects-loading">
+                    <span class="loader-dot"></span>
+                    <span class="loader-dot"></span>
+                    <span class="loader-dot"></span>
+                    <p>fetching repos…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source & Contributions -->
+    <section id="opensource" class="opensource">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> Open Source & Community
+            </h2>
+            <div class="opensource-grid">
+                <div class="opensource-card glass-card">
+                    <div class="opensource-icon">🐙</div>
+                    <h3>GitHub Projects</h3>
+                    <p>I share my projects and tools on GitHub, focusing on automation, Linux setups, and small utilities built to solve real problems.</p>
+                    <a href="https://github.com/jack02134x" target="_blank" rel="noopener noreferrer" class="inline-link">@jack02134x →</a>
+                </div>
+                <div class="opensource-card glass-card">
+                    <div class="opensource-icon">🧩</div>
+                    <h3>Community Sharing</h3>
+                    <p>I share configs, scripts, and setups with the community—especially around Hyprland and Linux tooling—helping others improve their own workflows.</p>
+                </div>
+                <div class="opensource-card glass-card">
+                    <div class="opensource-icon">🛠️</div>
+                    <h3>Self-Driven Learning</h3>
+                    <p>I learn by building and experimenting—breaking systems, fixing them, and documenting what works through projects and configs.</p>
+                </div>
+                <div class="opensource-card glass-card">
+                    <div class="opensource-icon">💬</div>
+                    <h3>Community Interaction</h3>
+                    <p>I engage with developer communities by sharing projects, discussing setups, and learning from others working with Linux and open-source tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Focus -->
+    <section class="focus">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> Current Focus
+            </h2>
+            <div class="focus-content glass-card">
+                <div class="focus-list">
+                    <div class="focus-item">
+                        <span class="focus-marker">▹</span>
+                        <span>Data structures & algorithms</span>
+                    </div>
+                    <div class="focus-item">
+                        <span class="focus-marker">▹</span>
+                        <span>Writing cleaner and more maintainable code</span>
+                    </div>
+                    <div class="focus-item">
+                        <span class="focus-marker">▹</span>
+                        <span>Small but complete system-level projects</span>
+                    </div>
+                    <div class="focus-item">
+                        <span class="focus-marker">▹</span>
+                        <span>Gradually moving toward <strong>AI + systems programming</strong></span>
+                    </div>
+                </div>
+                <div class="focus-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5L12 19M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-hash">#</span> Let's Connect
+            </h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm always open to interesting conversations, collaboration opportunities, or just geeking out about Linux and systems programming.
+                </p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/aditya-verma-28511a399" target="_blank" rel="noopener noreferrer" class="contact-link glass-card">
+                        <span class="contact-link-icon">🔗</span>
+                        <span class="contact-link-text">LinkedIn</span>
+                        <span class="contact-link-arrow">→</span>
+                    </a>
+                    <a href="mailto:brooooooo0707@gmail.com" class="contact-link glass-card">
+                        <span class="contact-link-icon">✉️</span>
+                        <span class="contact-link-text">Email</span>
+                        <span class="contact-link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/jack02134x" target="_blank" rel="noopener noreferrer" class="contact-link glass-card">
+                        <span class="contact-link-icon">🐙</span>
+                        <span class="contact-link-text">GitHub</span>
+                        <span class="contact-link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Built with ❤️ on <span class="highlight">Arch Linux</span> • Powered by curiosity and caffeine
+                </p>
+                <p class="footer-copy">© 2026 Aditya Verma</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
